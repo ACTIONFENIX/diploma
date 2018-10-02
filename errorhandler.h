@@ -15,3 +15,4 @@ public:
 };
 
 #endif //ERRORHANDLER_H
+

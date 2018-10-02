@@ -12,7 +12,7 @@ ErrorHandler::ErrorHandler(const std::string& msg, handling_type t): type(t)
         msgbox.setText(QString("ErrorHandler був викликаний уже 5 разів. Подальші некритичні виклики не будуть відображатися.") + msg.c_str());
         msgbox.exec();
     }
-    if (calls > 4) return;
+    if (calls > 1) return;
     if (type == handling_type::message)
     {
         QMessageBox msgbox;
@@ -30,3 +30,4 @@ ErrorHandler::ErrorHandler(const std::string& msg, handling_type t): type(t)
 }
 
 int ErrorHandler::calls = 0;
+

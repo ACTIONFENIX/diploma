@@ -34,7 +34,7 @@ public:
     std::vector<double>& operator[](size_t i);
     const std::vector<double>& operator[](size_t i) const;
     SubMatrix operator()(size_t l, size_t r) const;
-    double minor(size_t row, size_t col) const;
+    double get_minor(size_t row, size_t col) const;
     double algeb(size_t row, size_t col) const;
     double det() const;
     Matrix& operator+=(Matrix& m);
@@ -86,3 +86,4 @@ Matrix operator-(const Matrix& m, double val);
 Matrix operator*(const Matrix& m, double val);
 
 #endif // MATRIX_H
+

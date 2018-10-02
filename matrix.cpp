@@ -245,7 +245,7 @@ SubMatrix Matrix::operator()(size_t l, size_t r) const
     return SubMatrix(*this, l, r);
 }
 
-double Matrix::minor(size_t row, size_t col) const
+double Matrix::get_minor(size_t row, size_t col) const
 {
     Matrix res(rows() - 1, columns() - 1);
     for (size_t i = 0, res_i = 0; i < rows(); ++i)
@@ -270,7 +270,7 @@ double Matrix::minor(size_t row, size_t col) const
 
 double Matrix::algeb(size_t row, size_t col) const
 {
-    return pow(-1, row + col) * minor(row, col);
+    return pow(-1, row + col) * get_minor(row, col);
 }
 
 double Matrix::det() const
@@ -402,3 +402,4 @@ bool Matrix::isEmpty() const
 {
     return rows() == 0 && columns() == 0;
 }
+
